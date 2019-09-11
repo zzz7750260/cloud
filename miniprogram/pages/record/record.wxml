@@ -1,0 +1,21 @@
+<!--pages/record/record.wxml-->
+<text>pages/record/record.wxml</text>
+<view>
+  <view>
+    <button type="warn" data-url="../record/record" size="mini"  hover-class="other-button-hover"> 跟读日志 </button>
+    <button type="primary" data-url="../recordDownload/recordDownload" size="mini" bindtap="navigateToFun" hover-class="other-button-hover"> 下载记录 </button>
+  </view>
+  <view class="record-ul">
+    <view wx:for="{{recordList}}" wx:key="{{item.articleId}}" class="record-li" data-url="../recordMy/recordMy?id={{item._id}}" bindtap='navigateToFun'>
+      <view>
+        {{item.due}}
+      </view>
+      <view>
+        {{item.englishContent}}
+      </view>
+      <view>
+        总分:{{item.totalValue}}
+      </view>
+    </view>
+  </view>
+</view>

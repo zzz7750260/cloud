@@ -1,0 +1,5 @@
+/* pages/list/list.wxss */
+
+.list-li{
+  margin: 10px 5px;
+}

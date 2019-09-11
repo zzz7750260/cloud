@@ -1,0 +1,6 @@
+/* pages/music/music.wxss */
+@import "/style/fonts/iconfont.wxss";
+
+.select{
+  color: blue;
+}

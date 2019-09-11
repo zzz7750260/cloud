@@ -1,0 +1,14 @@
+/* pages/wordsArticle/wordsArticle.wxss */
+@import "/style/fonts/iconfont.wxss";
+.select{
+  color: blue;
+}
+
+.word-centent{
+  word-wrap:break-word; 
+}
+
+.icon-i{
+  margin:0px 10px; 
+}
+

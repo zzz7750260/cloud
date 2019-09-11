@@ -1,0 +1,29 @@
+<!--pages/chineseArticle/chineseArticle.wxml-->
+<text>pages/chineseArticle/chineseArticle.wxml</text>
+<view class="container">
+  <view>
+    {{articleInfo.title}}
+  </view>
+
+  <view>
+    {{articleInfo.article}} <i class="iconfont icon-yinyue" bindtap="playVoice"></i>
+  </view>
+
+  <view>
+    <button type="primary" bindtap="followRead">点击跟读</button>
+  </view>
+
+  <view>
+    <button type="warn" bindtap="playYourVoice" wx:if="{{yourVoice}}">播放跟读</button>
+  </view>
+
+  <view>
+    <button  bindtap="downloadYourVoice" wx:if="{{yourVoice}}">下载跟读</button>
+  </view>
+
+  <view>
+    <button  bindtap="getDownloadYourVoice" wx:if="{{yourVoice}}">查看跟读</button>
+  </view>
+</view>
+
+<component-nav> </component-nav>

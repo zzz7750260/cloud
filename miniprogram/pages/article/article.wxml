@@ -1,0 +1,50 @@
+<!--pages/article/article.wxml-->
+<text>pages/article/article.wxml</text>
+<view class="container">
+  <!--
+  <view>
+     <image style="width: 100%; height: 200px; background-color: #eeeeee;" mode="aspectFit" src="{{imgPath}}"></image>
+  </view>
+  -->
+
+  <view>
+    {{articleInfo.englishContent}} <i class="iconfont icon-yinyue" bindtap="speedEnglish"></i>
+  </view>
+  <view>
+    {{articleInfo.chineseContent}}
+  </view>
+
+  <view>
+    <button type="default" bindtap='followSpeak'>
+      跟读
+    </button>
+  </view>
+
+  <!--分析结果-->
+  <view>
+    <block wx:if="{{returnResult}}">
+      <view>
+        整体结果分析:
+        <view>发音准确度:{{returnResult.pron_accuracy}} </view>
+        <view>发音流畅度:{{returnResult.pron_fluency}} </view>
+        <view>发音完整度:{{returnResult.pron_completion}} </view>
+        <view>总分:{{resultTotal}}</view>
+      </view>
+      <view> 
+        单词分析
+        <view wx:for="{{returnResult.words}}">
+          单词:{{item.word}}  发音准确度:{{item.pron_accuracy}}   发音流畅度:{{item.pron_fluency}} 
+        </view>
+      
+      </view>
+
+      <view>
+        <button type="default" bindtap='playVoice'>
+          听听你的跟读
+        </button>
+      </view>
+    </block> 
+  </view>
+</view>
+
+<component-nav> </component-nav>

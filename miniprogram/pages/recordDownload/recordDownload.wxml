@@ -1,0 +1,32 @@
+<!--pages/recordDownload/recordDownload.wxml-->
+<text>pages/recordDownload/recordDownload.wxml</text>
+<view>
+  <view>
+    <view>
+      <button type="primary" data-url="../record/record" size="mini" bindtap="navigateToFun" hover-class="other-button-hover"> 跟读日志 </button>
+      <button type="warn" data-url="../recordDownload/recordDownload" size="mini"  hover-class="other-button-hover"> 下载记录 </button>    
+    </view>
+
+    <!--
+    <view>
+     <button type="default" size="mini"  hover-class="other-button-hover" bindtap="delAllRecord"> 清空记录 </button>    
+     <button type="primary" size="mini"  hover-class="other-button-hover" bindtap="showLocalRecord">
+        查看本地
+     </button>
+    </view>
+    -->
+
+  </view>
+
+  <view>
+    <view wx:for="{{downloadList}}" wx:key="{{item.index}}">
+      {{item.time}} {{item.title}}
+      <view>
+       <button type="primary" data-recordurl="{{item.savedFilePath}}" size="mini" bindtap="playRecord" hover-class="other-button-hover">播放</button>
+
+      <button type="primary" data-id="{{item._id}}" data-recordurl="{{item.savedFilePath}}" size="mini" bindtap="deleteRecord" hover-class="other-button-hover">删除</button>
+      </view>
+    </view>
+  </view>
+
+</view>

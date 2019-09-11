@@ -1,0 +1,36 @@
+<!--pages/recordMy/recordMy.wxml-->
+<text>pages/recordMy/recordMy.wxml</text>
+<view>
+  <view>
+    句子：{{recordInfo.englishContent}}
+  </view>
+  
+  <view class="recordValue">
+    <view>评测结果</view>
+    <view>
+      <view>
+        完成度：{{recordInfo.resultValue.pron_completion}}
+      </view>
+      <view>
+        流畅度：{{recordInfo.resultValue.pron_fluency}}
+      </view>
+      <view>
+        准确度：{{recordInfo.resultValue.pron_accuracy}}
+      </view>
+      <view>
+        总分：{{recordInfo.totalValue}}
+      </view>
+      
+    </view>
+    <view class="wordsRecord">
+      <view>单词发音评分</view>
+      <view>
+        <view wx:for="{{recordInfo.resultValue.words}}" wx:key="{{item.index}}">
+          <view>单词：{{item.word}}</view>
+          <text>准确度：{{item.pron_accuracy}}</text>
+          <text>流畅度：{{item.pron_fluency}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

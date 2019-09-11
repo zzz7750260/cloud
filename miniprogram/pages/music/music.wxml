@@ -1,0 +1,60 @@
+<!--pages/music/music.wxml-->
+<text>pages/music/music.wxml</text>
+
+<view>
+  <view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:if="{{webNav == 2}}">
+      <radio value="manual" checked=""/>手动
+    </label>
+    <label class="radio">
+      <radio value="auto" checked="true"/>自动
+    </label>
+  </radio-group>
+  </view>
+
+  <view>
+    <button type="default" bindtap='getVoice'>
+      录入声音
+    </button>
+  </view>
+
+  <view>
+    你的输入: {{voiceValue}}
+  </view>
+
+  <view wx:if="{{webNav == 2}}">
+    <view wx:if="{{musicList}}">
+      搜索的结果:
+      <view>
+      <scroll-view scroll-y style="height: 280px;">
+          <view wx:for="{{musicList}}" wx:key="{{rid}}" data-url="{{item.url}}" data-id="{{item.rid}}" data-name="{{item.name}}" data-singer="{{item.artist}}" bindtap='playMusic' class="iconfont icon-yinyue {{item.rid === musicPlayId && musicPlayStatus? 'select' : ''}}">
+            {{item.name}}-{{item.artist}}
+          </view>
+      </scroll-view>
+      </view>
+    </view>
+    <view wx:if="{{musicControl}}">
+      正在播放：{{musicName}}-{{musicSinger}}
+      <audio-player title="{{musicName}}" src="{{musicSrc}}" class="my-class" backgroundColor="#F0F0F0" btnColor="red" sliderBtnColor="blue" sliderProgressColor="purple"> 
+</audio-player>
+    </view>
+  
+  </view>
+
+  <view wx:if="{{webNav != 2}}">
+    <view>
+      相关信息：{{musicInfo.name}} —— {{musicInfo.artist}}
+    </view>
+    <view>
+      <view>
+        {{musicInfo.album}}
+      </view>
+      <view>
+        {{musicInfo.albuminfo}}
+      </view>
+    </view>
+
+  </view>
+ 
+</view>

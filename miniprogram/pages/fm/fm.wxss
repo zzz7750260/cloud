@@ -1,0 +1,36 @@
+/* pages/fm/fm.wxss */
+.select{
+  color: blue;
+}
+
+.category_ul{
+  display: flex;
+  width: 100%;
+}
+
+
+.category_li{
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+.category_li_title{
+  margin:8px 0px;
+}
+
+.cselect{
+  background-color: red;
+}
+
+.category-nav-ul{
+  display: flex;
+  justify-content:center;
+}
+
+.category-nav-li{
+  margin:5px 10px;
+}

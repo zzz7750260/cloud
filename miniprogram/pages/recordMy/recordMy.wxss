@@ -1,0 +1,4 @@
+/* pages/recordMy/recordMy.wxss */
+.wordsRecord , .recordValue{
+  margin-top: 10px;
+}

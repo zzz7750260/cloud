@@ -1,0 +1,30 @@
+<!--pages/translate/translate.wxml-->
+<text>pages/translate/translate.wxml</text>
+<view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio">
+      <radio value="englishMode" checked="true"/>英译中
+    </label>
+
+    <label class="radio">
+      <radio value="chineseMode" />中译音
+    </label>
+
+  </radio-group>
+
+  <button type="default" bindtap='getVoice'>
+    录音
+  </button>
+</view>
+<view>
+  翻译值：{{voiceValue}}
+</view>
+<view>
+  翻译结果：{{translateResul}}
+</view>
+
+<view>
+  <button type="default" bindtap='playTranslate'>
+      播放翻译
+  </button> 
+</view>

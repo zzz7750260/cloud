@@ -1,0 +1,46 @@
+<view class="nav">
+  <block wx:if="{{!logged}}">
+    <button wx:if="{{openid}}" open-type="getUserInfo" bindgetuserinfo="getUserInfoDetail"> 登陆</button>
+    <button wx:if="{{!openid}}"  bindtap="openModal"> 授权登陆 </button>
+  </block>
+
+  <block wx:else>
+    <view class="nav-ul">
+        <navigator url="../../pages/index/index" hover-class="navigator-hover" class="nav-li">
+          <view>
+            <i class="iconfont icon-changjingguanli nav-li-i"></i>
+          </view>
+          <text>首页</text>
+        </navigator>
+        <navigator url="../../pages/record/record" hover-class="navigator-hover" class="nav-li">
+          <view>
+            <i class="iconfont icon-icon_zhanghao nav-li-i"></i>
+          </view>
+          <text>我的</text>
+        
+        </navigator>
+    </view>
+  </block>
+</view>
+
+<component-modal show="{{showModal}}">
+    <scroll-view scroll-y class='main-content'>
+      <view>
+        <view class="modal-head">
+          授权登陆说明
+        </view>
+
+        <view class="modal-content">
+          <view class="modal-content-p">
+          亲爱的用户们，智能美音是一款语音小程序，主要有跟读，在线翻译，口语评分等功能，目的是为了提高大家的中英语口语能力；</view>
+          <view class="modal-content-p">
+            在授权登陆后，你可以记录你的口语评分，并可以下载你的根据记录到你的手机中，你是否愿意进行授权登陆
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' bindtap='cancel'>取消</view>
+      <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm'>确定</view>
+    </view>
+</component-modal>

@@ -1,0 +1,31 @@
+<!--pages/words/words.wxml-->
+<text>pages/words/words.wxml</text>
+<view>
+  <view>
+    <button type="primary" size="mini" bindtap='addInput'>
+      添加
+    </button>
+
+    <textarea value='{{temCentent}}' placeholder="文章内容" auto-height bindinput="getTextarea"></textarea>
+
+    <view>
+      <input type="text" placeholder="输入单词" bindinput="postInput" value="{{temInput}}"></input>
+      <input type="text" placeholder="输入音标" bindinput="postSymbol" value="{{temSymbol}}"></input>
+    </view> 
+
+  </view>
+  
+  <view>
+    <view wx:for="{{inputArray}}" wx:key="{{index}}">
+      <view>
+        <text class="word-list">单词:{{item.input}}</text><text class="word-list">音标:{{item.temSymbol}}</text><text class="word-list">翻译:{{item.temTranslate}}</text>  <button data-idx="{{index}}" type="warn" size="mini" bindtap='delArray'>删除</button>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <button type="primary" bindtap='postWordInfo'>
+      提交
+    </button>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+<!--pages/fm/fm.wxml-->
+<text>pages/fm/fm.wxml</text>
+<component-head> </component-head>
+<view class="container">
+  <view class="centent">
+  <view class="category_ul">
+    <view class="category_li {{item.id===categoryId? 'cselect' : ''}}" wx:for="{{indexInfo.category}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='getCategoryInfo'>
+      {{item.name}}
+    </view>
+  </view>
+
+  <view >
+    <view>
+      <view wx:if="{{webNav != 2}}">一句话，表达你的心声</view>
+      <view wx:for="{{categoryList}}" wx:key="{{item.id}}" data-url="{{item.url}}" data-title="{{item.title}}" bindtap='playAudio' class="category_li_title {{item.url ===temUrl && playFlag? 'select': ''}}">
+        {{item.title}}——作者:{{item.speak}}
+      </view>    
+    </view>
+
+    <view wx:if="{{categoryList && categoryFlag}}" class="category-nav-ul">
+        <view wx:if="{{theOffset > 0}}" bindtap="getCategoryDec" class="category-nav-li">
+          上一页
+        </view>
+        <view class="category-nav-li">
+          第{{thePage}}页
+        </view>
+        <view bindtap='getCategoryInc' class="category-nav-li">
+          下一页
+        </view>
+    </view>
+
+    <view wx:if="{{fmTitle && webNav == 2}}">
+      正在播放:{{fmTitle}}
+    </view>
+  </view>
+  </view>
+</view>
+
+<component-nav> </component-nav>

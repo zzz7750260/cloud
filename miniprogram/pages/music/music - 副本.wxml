@@ -1,0 +1,47 @@
+<!--pages/music/music.wxml-->
+<text>pages/music/music.wxml</text>
+
+<view>
+  <view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:if="{{webNav == 2}}">
+      <radio value="manual" checked=""/>手动
+    </label>
+    <label class="radio">
+      <radio value="auto" checked="true"/>自动
+    </label>
+  </radio-group>
+  </view>
+
+  <view>
+    <button type="default" bindtap='getVoice'>
+      录入声音
+    </button>
+  </view>
+
+  <view>
+    你的输入: {{voiceValue}}
+  </view>
+
+  <view wx:if="{{webNav == 2}}">
+    <view wx:if="{{musicList}}">
+      搜索的结果:
+      <view>
+      <scroll-view scroll-y style="height: 280px;">
+          <view wx:for="{{musicList}}" wx:key="{{id}}" data-url="{{item.url}}" data-id="{{item.id}}" data-name="{{item.name}}" data-singer="{{item.singer}}" bindtap='playMusic' class="iconfont icon-yinyue {{item.id === musicPlayId && musicPlayStatus? 'select' : ''}}">
+            {{item.name}}-{{item.singer}}
+          </view>
+      </scroll-view>
+      </view>
+    </view>
+    <view>
+      正在播放：{{musicName}}-{{musicSinger}}
+    </view>
+  
+  </view>
+
+  <view wx:if="{{webNav != 2}}">
+    相关信息：{{musicInfo.songName}} —— {{musicInfo.artist}}
+  </view>
+ 
+</view>

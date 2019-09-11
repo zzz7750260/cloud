@@ -1,0 +1,40 @@
+<!--pages/ihearing/ihearing.wxml-->
+<text>pages/ihearing/ihearing.wxml</text>
+<view>
+  <view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio">
+        <radio value="word" checked="true"/>单词
+      </label>
+
+      <label class="radio">
+        <radio value="sentence"/>句子
+      </label>
+    </radio-group>
+  </view>
+
+  <view>
+     <input  bindinput="bindKeyInput" placeholder="输入同步到view中"/>
+     <view class="section__title">你输入的是：{{inputValue}}</view>
+  </view>
+
+   <view>
+    <button type="default" bindtap='hearingTranslate'>
+      同声同译语音合成
+    </button>
+  </view> 
+
+  <view>
+    <button type="default" bindtap='hearing'>
+      跟读
+    </button>
+  </view>
+
+  <view>
+    评测结果：
+    <view>准确度:{{voiceAccuracy}}</view>   
+    <view>流畅度:{{voiceFluency}}</view>   
+    <view>完成度:{{voiceCompletion}}</view>   
+  </view>
+
+</view>

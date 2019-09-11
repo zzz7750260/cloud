@@ -1,0 +1,45 @@
+{
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.0",
+      "provider": "wx069ba97219f66d99"
+    },
+    "ihearing-eval": {
+      "version": "0.0.6",
+      "provider": "wx63d6102e26f0a3f8"
+    },
+    "myPlugin": {
+      "version": "1.0.0",
+      "provider": "wxbb9d84aea28a6dba"
+    }
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/music/music",
+    "pages/translate/translate",
+    "pages/ihearing/ihearing",
+    "pages/inputTranslate/inputTranslate",
+    "pages/article/article",
+    "pages/list/list",
+    "pages/record/record",
+    "pages/recordMy/recordMy",
+    "pages/recordDownload/recordDownload",
+    "pages/fm/fm",
+    "pages/words/words",
+    "pages/wordsList/wordsList",
+    "pages/wordsArticle/wordsArticle",
+    "pages/chineseArticle/chineseArticle",
+    "pages/chineseArticleList/chineseArticleList",
+    "pages/chineseArticleAdd/chineseArticleAdd",
+    "pages/soundControl/soundControl"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "智能美音",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

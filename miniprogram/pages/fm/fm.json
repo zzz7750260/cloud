@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "component-head": "../../components/head/head",
+    "component-nav": "../../components/nav/nav",
+    "audio-player": "plugin://myPlugin/audio-player"
+  }
+}

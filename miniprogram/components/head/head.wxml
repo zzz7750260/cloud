@@ -1,0 +1,17 @@
+<view class="header">
+  <block wx:if="{{hasUser}}"> 
+    <view class="userInfoK">
+      <view>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
+      <view class="userInfoK-detail">
+        <view>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </view>
+        <view>
+          <text class="userinfo-nickname">国家:{{userInfo.country}}  省份:{{userInfo.province}}  城市:{{userInfo.city}}</text>
+        </view>
+      </view>     
+    </view>
+  </block>
+</view>

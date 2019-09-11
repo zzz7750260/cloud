@@ -1,0 +1,29 @@
+<!--pages/chineseArticleAdd/chineseArticleAdd.wxml-->
+<text>pages/chineseArticleAdd/chineseArticleAdd.wxml</text>
+
+<view>
+  <view>
+   <input bindinput="getTitle" placeholder="请输入文章title"/>
+  </view>
+
+  <view>
+   <textarea bindinput="getArticle" auto-height placeholder="输入文章内容" />
+  </view>
+
+  <view>
+   <input bindinput="getAuthor" placeholder="请输入文章作者"/>
+  </view>
+
+  <view>
+   <button type="default" size="mini" hover-class="other-button-hover" bindtap="getImg"> 上传图片 </button>
+    <view wx:if="{{theFileID}}">
+      <image style="width:100%; height: 200px; background-color: #eeeeee;" mode="aspectFill" src="{{theFileID}}"></image>
+    </view>
+  </view>
+
+  <view>
+   <button type="primary" bindtap="postArticle" hover-class="other-button-hover"> 提交文章 </button>
+  
+  </view>
+
+</view>

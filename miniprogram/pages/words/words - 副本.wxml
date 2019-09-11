@@ -1,0 +1,19 @@
+<!--pages/words/words.wxml-->
+<text>pages/words/words.wxml</text>
+<view>
+  <view>
+  <button type="default" size="mini" bindtap='addInput'>
+    添加
+  </button>
+
+   <view wx:for="{{array}}" wx:key="{{index}}">
+      <input type="text" placeholder="输入单词" bindinput="postInput" data-idx='{{index}}' ></input>
+      <input type="text" placeholder="输入音标" bindinput="postSymbol" data-idx='{{index}}' ></input>
+      <button type="default" class='del' bindtap='delArray' data-idx='{{index}}'>删除  </button>
+      <view>1</view>
+       <view>1</view>
+        <view>1</view>
+    </view> 
+  </view>
+
+</view>

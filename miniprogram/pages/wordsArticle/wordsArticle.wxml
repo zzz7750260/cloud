@@ -1,0 +1,25 @@
+<!--pages/wordsArticle/wordsArticle.wxml-->
+<text>pages/wordsArticle/wordsArticle.wxml</text>
+<view class="container">
+  <view >
+    <view>
+      {{wordInfo.time}}
+    </view>
+    <view class="word-centent">
+      今日单词：{{wordInfo.centent}}
+    </view>
+  </view>
+  <view>
+    <view wx:for="{{wordInfo.wordArray}}" wx:key="{{index}}">
+      <view>
+        {{item.input}} {{item.temSymbol}} {{item.temTranslate}} <i class="iconfont icon-yinyue icon-i" data-centent="{{item.input}}" bindtap="getWordUrl"></i>  <i class="iconfont icon-huatong icon-i {{temIdx == index && hearingStatus? 'select' : ''}}" data-centent="{{item.input}}" bindtap="playHearing" data-idx="{{index}}" data-centent="{{item.input}}" ></i>    
+      </view>
+      <view wx:if="{{item.hearing}}">
+        <text>准确度:{{item.hearing.pron_accuracy}}</text> <text>流畅度:{{item.hearing.pron_fluency}}</text>   <text>完成度:{{item.hearing.pron_completion}}</text>  <i class="iconfont icon-bofang icon-i" data-voice="{{item.voice}}" bindtap="playVoice"></i>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<component-nav> </component-nav>

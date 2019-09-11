@@ -1,0 +1,10 @@
+<!--pages/wordsList/wordsList.wxml-->
+<text>pages/wordsList/wordsList.wxml</text>
+<view class="container">
+  <view wx:for="{{wordList}}" wx:key="{{index}}" class="wordList-ul" data-url="../wordsArticle/wordsArticle?id={{item._id}}" bindtap="navigateToPage">
+    <view class="word-data">{{item.time}}</view> 
+    <view class="word-centent">{{item.centent}}</view>
+  </view>
+</view>
+
+<component-nav> </component-nav>

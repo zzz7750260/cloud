@@ -1,0 +1,24 @@
+//根据云文件的fileID获取临时的url
+var getImgPath = function(fileID){
+  var thePath
+  wx.cloud.getTempFileURL({
+    fileList: [{
+      fileID: fileID,
+      maxAge: 60 * 60 * 24, // one hour
+    }]
+  }).then(function(res){
+    // get temp file URL
+    console.log(res.fileList)
+    //将链接存储到thePath中
+    thePath = res.fileList
+  }).catch(function(error){
+    // handle error
+  })
+
+  return thePath
+}
+
+//通过module.exports向外部提供接口
+module.exports={ 
+  getImgPath: getImgPath
+};

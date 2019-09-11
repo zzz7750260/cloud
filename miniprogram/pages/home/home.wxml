@@ -1,0 +1,44 @@
+<!--pages/home/home.wxml-->
+<text>pages/home/home.wxml</text>
+<view>
+  <component-head></component-head>
+
+  <!--中间内容区 -->
+  <view>
+    <view class="section">
+      <textarea bindinput="englishInput" auto-height placeholder="输入每日一句的内容" />
+    </view>
+    
+    <view>
+      翻译结果：{{translateValue}}
+    </view>
+
+    <view class="section">
+      <textarea bindinput="chineseInput" auto-height placeholder="句子翻译输入" />
+    </view>
+
+    <view class="section">
+      <input placeholder="句子来源" bindinput='fromInput' />
+    </view>
+
+    <view class="section">
+      <button  size="mini" type="default" bindtap="chooseImg" hover-class="other-button-hover">选择图片  </button>
+    </view>  
+    <block wx:if="{{temImgPath}}" >
+        <view>
+        <image style="width:100%; height: 200px; background-color: #eeeeee;" mode="aspectFit" src="{{temImgPath}}"></image>
+        </view>
+        <view>
+        <button  size="mini" type="primary" bindtap="postImg" hover-class="other-button-hover">上传图片</button>
+        </view>
+    </block>
+
+
+    <view class="section">
+      <button type="default" bindtap="postArticle" hover-class="other-button-hover">提交</button>
+    </view>
+  </view>
+
+  <!--<component-nav></component-nav>-->
+</view>
+

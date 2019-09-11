@@ -1,0 +1,25 @@
+<!--pages/translate/translate.wxml-->
+<text>pages/translate/translate.wxml</text>
+<view>
+  
+
+  <button type="default" bindtap='englishToChinese'>
+    英译中
+  </button>
+
+  <button type="default" bindtap='chineseToEnglish'>
+    中译英
+  </button>
+</view>
+<view>
+  翻译值：{{voiceValue}}
+</view>
+<view>
+  翻译结果：{{translateResul}}
+</view>
+
+<view>
+  <button type="default" bindtap='playTranslate'>
+      播放翻译
+  </button> 
+</view>

@@ -1,0 +1,24 @@
+<!--pages/inputTranslate/inputTranslate.wxml-->
+<text>pages/inputTranslate/inputTranslate.wxml</text>
+<view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio">
+      <radio value="englishMode" checked="true"/>英译中
+    </label>
+    <label class="radio">
+      <radio value="chineseMode" />中译英
+    </label>
+  </radio-group>
+</view>
+
+<view>
+   <textarea bindinput="bindTextAreaInput" auto-height placeholder="输入需要翻译的内容" />
+   <i class="iconfont icon-bofang" bindtap="playOrigin"></i>
+</view>
+
+<view>
+  <view>
+   翻译结果：{{targetValue}}
+  </view>
+   <i class="iconfont icon-bofang" bindtap="playTarget"></i>
+</view>

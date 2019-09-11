@@ -1,0 +1,19 @@
+<!--pages/list/list.wxml-->
+<!--引入wxs中的tools.wxs-->
+
+<text>pages/list/list.wxml</text>
+<view class="container">
+  <view class="list-li" wx:for="{{articleList}}" wx:key="item._id" data-url="../article/article?id={{item._id}}" bindtap='navigateToPage' >
+    <view>
+      {{item.time}}
+    </view>
+    <view>
+      {{item.englishContent}}
+    </view>
+    <view>
+      {{item.chineseContent}}
+    </view>
+  </view>
+
+</view>
+<component-nav> </component-nav>

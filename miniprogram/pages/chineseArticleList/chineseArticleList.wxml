@@ -1,0 +1,11 @@
+<!--pages/chineseArticleList/chineseArticleList.wxml-->
+<text>pages/chineseArticleList/chineseArticleList.wxml</text>
+<view>
+  <view wx:for="{{articleList}}" data-url="../chineseArticle/chineseArticle?id={{item._id}}" wx:key="{{item._id}}" bindtap='navigateToPage' class="list-li">
+    <view class="list-li-head">
+      <view>{{item.title}}</view>
+      <view>--{{item.author}}</view>
+    </view>
+    
+  </view>
+</view>

@@ -1,0 +1,9 @@
+/* pages/wordsList/wordsList.wxss */
+.wordList-ul{
+  width: 100%;
+}
+
+.word-centent{
+  word-wrap:break-word; 
+}
+

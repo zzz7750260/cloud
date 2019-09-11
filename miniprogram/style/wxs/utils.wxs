@@ -1,0 +1,31 @@
+/**字符串截取 */
+function sub(val,start,end){
+  var theString = val.substring(start, end);
+  return theString
+}
+
+/**攻略收藏内容截取 */
+function articleSub(val){
+  var str
+  if (val.length > 36){
+    str = val.substring(0, 26)
+    str = str + '...'
+  }
+  else{
+    str = val;
+  }
+  return str
+}
+
+/**图片数组截取 */
+function imgArray(arr,start,end){
+  var theArray = arr.slice(start, end);
+  return theArray;
+}
+
+
+module.exports = {
+  sub: sub,
+  imgArray: imgArray,
+  articleSub: articleSub
+}

@@ -1,0 +1,134 @@
+<!--index.wxml-->
+<component-head> </component-head>
+
+<view class="container">
+  <!-- 用户 openid
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view> -->
+  
+
+    <!-- 跳转到新页面 
+  <view class="uploader">
+    <navigator url="../home/home" open-type="navigate" class="uploader-text">
+      <text>跳转到音乐页面</text>
+    </navigator>
+  </view>-->
+
+  <!-- 跳转到翻译页面 
+  <view class="uploader">
+    <navigator url="../translate/translate" open-type="navigate" class="uploader-text">
+      <text>跳转到翻译页面</text>
+    </navigator>
+  </view> -->
+
+   <!-- 跳转到文字翻译页面 
+  <view class="uploader">
+    <navigator url="../inputTranslate/inputTranslate" open-type="navigate" class="uploader-text">
+      <text>跳转到文字翻译页面</text>
+    </navigator>
+  </view>  --> 
+
+  <!-- 跳转到语音评测页面 
+  <view class="uploader">
+    <navigator url="../ihearing/ihearing" open-type="navigate" class="uploader-text">
+      <text>跳转到语音评测页面</text>
+    </navigator>
+  </view>  -->
+
+  <!--  测试数据库添加
+  <view bindtap='addUser'>添加用户</view>-->
+  <view>
+    <view class="dayArticle" data-url="../article/article?id={{articleList[0]['_id']}}" bindtap='navigateToPage'>
+      <view class="dayArticle-head">
+        <text>每日一句</text>
+        <text>{{articleList[0]['time']}}</text>
+      </view>
+      
+      <view>
+        {{articleList[0]['englishContent']}}
+      </view>
+      <view>
+        {{articleList[0]['chineseContent']}}
+      </view>
+      
+    </view>
+  </view>
+
+  <view class="container-ul">
+
+    <view data-url="../list/list" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-shoucang container-li-i"></i>
+      <view>每日一句</view>
+    </view>
+
+    <view data-url="../ihearing/ihearing" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-shoucang1 container-li-i"></i>
+      <view>口语评测</view>
+    </view>
+
+    <view data-url="../wordsList/wordsList" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-xingzhuang-tupian container-li-i"></i>
+      <view>每日十词</view>
+    </view>
+
+    <view data-url="../music/music" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-yinyue container-li-i"></i>
+      <view>声音搜索</view>
+    </view>
+
+    <view data-url="../translate/translate" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-huatong container-li-i"></i>
+      <view>语音翻译</view>
+    </view>
+
+    <view data-url="../inputTranslate/inputTranslate" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-tianshenpi container-li-i"></i>
+      <view>文字翻译</view>
+      
+    </view>
+
+
+
+    <view wx:if="{{openId == 'oZBHF5HNybUSi8_zGSJLe51byhUw'}}" data-url="../home/home" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-yunyingguanli container-li-i"></i>
+      <view>一句添加</view>
+    </view>
+
+    <view wx:if="{{openId == 'oZBHF5HNybUSi8_zGSJLe51byhUw'}}" data-url="../words/words" bindtap='navigateToFun' class="container-li">
+      <i class="iconfont icon-yunyingguanli container-li-i"></i>
+      <view>单词添加</view>
+    </view>
+    
+    <view wx:if="{{openId == 'oZBHF5HNybUSi8_zGSJLe51byhUw'}}" data-url="../chineseArticleAdd/chineseArticleAdd" bindtap='navigateToFun' class="container-li">
+      <i class="iconfont icon-yunyingguanli container-li-i"></i>
+      <view>中文添加</view>
+    </view>
+
+
+    <view data-url="../fm/fm" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-zitiyulan container-li-i"></i>
+      <view>众说纷纭</view>
+    </view>
+
+    <view data-url="../chineseArticleList/chineseArticleList" bindtap='navigateToPage' class="container-li">
+      <i class="iconfont icon-charutupian container-li-i"></i>
+      <view>中文口语</view>
+    </view>
+
+      <view wx:if="{{openId == 'oZBHF5HNybUSi8_zGSJLe51byhUw'}}"data-url="../soundControl/soundControl" bindtap='navigateToPage' class="container-li">
+        <i class="iconfont icon-charutupian container-li-i"></i>
+          <view>声音操作</view>
+      </view>
+  </view>
+</view>
+
+<component-nav> </component-nav>

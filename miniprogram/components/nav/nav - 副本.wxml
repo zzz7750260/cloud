@@ -1,0 +1,30 @@
+<view class="nav">
+    <button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="getUserInfoDetail"> 获取头像·昵称 </button>
+    <block wx:else>
+      <view class="nav-ul">
+          <navigator url="../../pages/index/index" hover-class="navigator-hover" class="nav-li">
+            <view>
+              <i class="iconfont icon-changjingguanli nav-li-i"></i>
+            </view>
+            <text>首页</text>
+          </navigator>
+          <navigator url="../../pages/record/record" hover-class="navigator-hover" class="nav-li">
+            <view>
+              <i class="iconfont icon-icon_zhanghao nav-li-i"></i>
+            </view>
+            <text>我的</text>
+          
+          </navigator>
+      </view>
+  </block>
+</view>
+
+<component-modal>
+    <scroll-view scroll-y class='main-content'>
+      内容
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' bindtap='cancel'>取消</view>
+      <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm'>确定</view>
+    </view>
+</component-modal>

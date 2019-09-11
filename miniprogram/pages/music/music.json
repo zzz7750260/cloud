@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "audio-player": "plugin://myPlugin/audio-player"
+  }
+}

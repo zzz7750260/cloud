@@ -1,0 +1,4 @@
+/* pages/record/record.wxss */
+.record-li{
+  margin: 10px 5px;
+}

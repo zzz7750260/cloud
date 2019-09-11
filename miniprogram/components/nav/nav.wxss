@@ -1,0 +1,56 @@
+@import "/style/fonts/iconfont.wxss";
+
+.nav{
+ position: fixed;
+ bottom: 0px;
+ width: 100%;
+ background-color: white
+}
+
+.nav-ul{
+ display: flex;
+}
+
+.nav-li{
+ width: 50%;
+ text-align: center;
+}
+
+.nav-li-i{
+  font-size: 24px
+}
+
+.modal-btn-wrapper{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.cancel-btn, .confirm-btn{
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.cancel-btn{
+  border-right: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.modal-head{
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-content{
+  margin: 0px 10px 10px 10px;
+}
+
+.modal-content-p{
+  text-indent: 20rpx;
+}

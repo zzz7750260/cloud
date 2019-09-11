@@ -1,0 +1,30 @@
+<!--pages/soundControl/soundControl.wxml-->
+<text>pages/soundControl/soundControl.wxml</text>
+<view>
+  <view wx:if="{{showTextButton}}">
+    <input placeholder="输入文字" bindblur="theText" auto-focus/>
+
+     <button type="primary" size="default" bindtap="sendMessage" hover-class="other-button-hover">发送</button>
+  </view>
+
+  <view>
+   <button type="primary" size="default" bindtap="getSound" hover-class="other-button-hover">声音控制 </button>
+  </view>
+
+  <view>
+    <block wx:if="{{soundList.length > 0}}">
+      列表：
+      <view wx:for="soundList" wx:key="{{index}}"> 
+      
+      </view>
+    </block>
+  </view>
+
+  <view>
+    <view wx:for="{{getSocketQueue}}" wx:key="{{index}}">
+      <view>
+        {{item.value}}
+      </view> 
+    </view>
+  </view>
+</view>

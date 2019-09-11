@@ -1,0 +1,24 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  box-sizing: border-box;
+  padding-bottom: 50px;
+} 
+
+.centent{
+  padding-bottom: 50px;
+}
+
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
